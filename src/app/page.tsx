@@ -1,25 +1,25 @@
 import HeroSection from "@/components/sections/HeroSection";
-import BannerSection from "@/components/sections/BannerSection";
-import TreinamentosSection from "@/components/sections/TreinamentosSection";
+import TreinamentosDestaqueSection from "@/components/sections/TreinamentosDestaqueSection";
 import SobreSection from "@/components/sections/SobreSection";
-import MissaoSection from "@/components/sections/MissaoSection";
+import MissaoVisaoSection from "@/components/sections/MissaoVisaoSection";
 import AssessoriaSection from "@/components/sections/AssessoriaSection";
-import ServicosSection from "@/components/sections/ServicosSection";
-import EmpresasSection from "@/components/sections/EmpresasSection";
-import CTASection from "@/components/sections/CTASection";
+import TreinamentosGridSection from "@/components/sections/TreinamentosGridSection";
+import EmpresasAtendidasSection from "@/components/sections/EmpresasAtendidasSection";
+import AtendimentosSection from "@/components/sections/AtendimentosSection";
+import FooterSection from "@/components/sections/FooterSection";
 
 export default function Home() {
   return (
     <main>
       <HeroSection />
-      <BannerSection />
-      <TreinamentosSection />
+      <TreinamentosDestaqueSection />
       <SobreSection />
-      <MissaoSection />
+      <MissaoVisaoSection />
       <AssessoriaSection />
-      <ServicosSection />
-      <EmpresasSection />
-      <CTASection />
+      <TreinamentosGridSection />
+      <EmpresasAtendidasSection />
+      <AtendimentosSection />
+      <FooterSection />
     </main>
   );
 }

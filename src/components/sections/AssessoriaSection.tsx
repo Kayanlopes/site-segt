@@ -1,109 +1,95 @@
-"use client";
-
-import { useState } from "react";
+import Image from "next/image";
 
 const features = [
-  "Elaboração e implantação de PPRA e PCMSO",
-  "Gestão de EPIs e controle de validade",
-  "Assessoria em CIPA e SIPAT",
-  "Análise e investigação de acidentes de trabalho",
-  "Adequação às Normas Regulamentadoras (NRs)",
-  "Laudos técnicos e emissão de CAT",
+  { icon: "/stars-icon.svg", texto: "Planos exclusivos",          bg: "#F8AD2D" },
+  { icon: "/check-icon.svg", texto: "Atendimento personalizado",  bg: "#F8AD2D" },
 ];
 
-function CheckIcon() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="12" cy="12" r="12" fill="#F7AE2E" />
-      <path
-        d="M7 12.5l3.5 3.5 6.5-7"
-        stroke="#ffffff"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-const tabs = ["Assessoria", "Serviços / Treinamentos"] as const;
-
 export default function AssessoriaSection() {
-  const [abaAtiva, setAbaAtiva] = useState<(typeof tabs)[number]>("Assessoria");
-
   return (
-    <section className="py-20 px-6 md:px-16 lg:px-24 bg-white">
-      <div className="max-w-6xl mx-auto">
-        {/* Tabs */}
-        <div className="flex gap-2 mb-12 border-b border-gray-200">
-          {tabs.map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setAbaAtiva(tab)}
-              className="px-6 py-3 font-semibold text-sm transition-colors relative"
+    <section id="assessoria" style={{ paddingBlock: "clamp(40px, 4.2vw, 80px)" }}>
+      <div className="container-segt">
+        <div
+          className="flex flex-col md:flex-row items-start"
+          style={{ gap: "clamp(24px, 4.2vw, 80px)" }}
+        >
+          {/* Foto real */}
+          <div
+            className="w-full md:w-[45%] flex-shrink-0 rounded-2xl overflow-hidden relative"
+            style={{ aspectRatio: "689/507" }}
+          >
+            <Image
+              src="/assesoria-image.png"
+              alt="Assessoria SEGT"
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          {/* Conteúdo */}
+          <div className="flex flex-col gap-5 md:w-[55%]">
+            {/* Tab label */}
+            <div>
+              <span
+                className="font-bold"
+                style={{ color: "#008743", fontSize: "clamp(16px, 1vw, 20px)" }}
+              >
+                Assessoria
+              </span>
+              <div
+                className="mt-2 h-[4px] rounded-full"
+                style={{ width: 161, backgroundColor: "#B3DBC7" }}
+              />
+            </div>
+
+            {/* Headline */}
+            <h2
+              className="font-bold"
               style={{
-                color: abaAtiva === tab ? "#006B43" : "#9ca3af",
-                borderBottom: abaAtiva === tab ? "3px solid #F7AE2E" : "3px solid transparent",
+                color: "#F8AD2D",
+                fontSize: "clamp(24px, 1.9vw, 36px)",
+                lineHeight: "1.2",
               }}
             >
-              {tab}
-            </button>
-          ))}
-        </div>
-
-        {/* Conteúdo Assessoria */}
-        {abaAtiva === "Assessoria" && (
-          <div className="flex flex-col md:flex-row gap-12 items-start">
-            <div className="md:w-1/2">
-              <h2
-                className="text-3xl md:text-4xl font-bold mb-6 leading-tight"
-                style={{ color: "#F7AE2E" }}
-              >
-                Assessoria completa em Segurança do Trabalho
-              </h2>
-              <p className="text-base leading-relaxed mb-8" style={{ color: "#1A1A1A" }}>
-                Oferecemos suporte especializado para que sua empresa esteja sempre em conformidade com as legislações vigentes, prevenindo acidentes e promovendo a saúde dos colaboradores.
-              </p>
-              <ul className="flex flex-col gap-4">
-                {features.map((f) => (
-                  <li key={f} className="flex items-start gap-3">
-                    <span className="mt-0.5 flex-shrink-0">
-                      <CheckIcon />
-                    </span>
-                    <span className="text-sm leading-relaxed" style={{ color: "#1A1A1A" }}>
-                      {f}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Imagem placeholder */}
-            <div className="md:w-1/2">
-              <div
-                className="w-full aspect-[4/3] rounded-2xl flex items-center justify-center"
-                style={{ backgroundColor: "#e5e7eb" }}
-              >
-                <span className="text-gray-400 text-sm">Foto — assessoria</span>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Conteúdo Serviços */}
-        {abaAtiva === "Serviços / Treinamentos" && (
-          <div>
-            <h2
-              className="text-3xl md:text-4xl font-bold mb-10 leading-tight"
-              style={{ color: "#F7AE2E" }}
-            >
-              Serviços e Treinamentos
+              Planejada e adaptada as suas necessidades:
             </h2>
-            <p className="text-base leading-relaxed" style={{ color: "#1A1A1A" }}>
-              Veja na seção abaixo todos os nossos treinamentos disponíveis.
+
+            {/* Parágrafo */}
+            <p
+              className="font-normal"
+              style={{
+                color: "#1A1A1A",
+                fontSize: "clamp(14px, 0.94vw, 18px)",
+                lineHeight: "1.6",
+              }}
+            >
+              Nossa assessoria é cuidadosamente planejada e adaptada às suas necessidades. Oferecemos visitas e atendimento na empresa semanal, quinzenal ou mensal, com carga horária flexível. Nossos abrangentes planos incluem treinamentos e uma variedade de documentos para atender exatamente ao que você precisa.
             </p>
+
+            {/* Features com ícone em círculo colorido */}
+            <div className="flex flex-col gap-3 mt-2">
+              {features.map((f) => (
+                <div key={f.texto} className="flex items-center gap-3">
+                  <div
+                    className="flex-shrink-0 rounded-full flex items-center justify-center"
+                    style={{ width: 40, height: 40, backgroundColor: f.bg }}
+                  >
+                    <Image src={f.icon} alt="" width={20} height={20} />
+                  </div>
+                  <span
+                    className="font-normal"
+                    style={{
+                      color: "#1A1A1A",
+                      fontSize: "clamp(14px, 0.94vw, 18px)",
+                    }}
+                  >
+                    {f.texto}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
-        )}
+        </div>
       </div>
     </section>
   );
